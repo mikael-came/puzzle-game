@@ -1,59 +1,44 @@
 # Licorne
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.42.
+Jeu de logique Angular : place une licorne par ligne, colonne et zone colorée sans que deux licornes se touchent.
 
-## Development server
-
-To start a local development server, run:
+## Développement
 
 ```bash
-ng serve
+npm ci
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L’application locale est disponible sur `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Tests et build
 
 ```bash
-ng generate component component-name
+npm test -- --watch=false
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Publier sur GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` teste et déploie automatiquement l’application à chaque push sur `main`. Il configure le chemin de base selon le nom du dépôt et ajoute un fallback pour que les routes Angular fonctionnent lorsqu’on recharge une page.
+
+1. Crée un dépôt GitHub (sans ajouter de README, licence ou `.gitignore`).
+2. À la racine du projet, remplace `VOTRE-UTILISATEUR` et `NOM-DU-DEPOT` par les valeurs de ton dépôt, puis configure le dépôt distant :
+
+   ```bash
+   git add README.md .github/workflows/deploy.yml
+   git commit -m "Configure GitHub Pages deployment"
+   git remote add origin https://github.com/VOTRE-UTILISATEUR/NOM-DU-DEPOT.git
+   git push -u origin main
+   ```
+
+3. Dans GitHub, ouvre **Settings → Pages** et sélectionne **GitHub Actions** comme source de publication.
+4. Attends la réussite du workflow dans l’onglet **Actions**. Le site sera publié à l’adresse `https://VOTRE-UTILISATEUR.github.io/NOM-DU-DEPOT/`.
+
+Pour publier les changements suivants :
 
 ```bash
-ng generate --help
+git add .
+git commit -m "Décrire les changements"
+git push
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
