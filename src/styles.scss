@@ -1,0 +1,30 @@
+@use './app/app';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Nunito', 'Trebuchet MS', sans-serif;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #faf8f6;
+  color: #392f3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
